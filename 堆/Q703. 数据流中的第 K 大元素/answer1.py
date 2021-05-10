@@ -4,7 +4,9 @@
 
 
 # 用堆解决，自己做
-# 每次都取k个，然后插入回去
+# 插入一个最小数，防止数组数量不够k个
+# 取最大的k个数，用堆排序
+# 判断最小的是否比新的数大，小则替换，大则忽略，然后读出最小数
 
 import heapq
 
@@ -12,22 +14,15 @@ import heapq
 class KthLargest:
 
     def __init__(self, k: int, nums):
-        if nums:
-            nums = [-i for i in nums]
-            heapq.heapify(nums)
-            if len(self.nums) >= k:
-                self.nums = [-heapq.heappop(nums) for i in range(k)]
-            else:
-                self.nums = [-heapq.heappop(nums) for i in range(k - 1)]
-            self.nums[-1::-1] = self.nums[:]
-        else:
-            self.nums = nums
-        self.k = k
+        nums.append(-10**7)
+        nums = [-i for i in nums]
+        heapq.heapify(nums)
+        self.nums = []
+        self.nums = [-heapq.heappop(nums) for i in range(k)]
+        self.nums[-1::-1] = self.nums[:]
 
     def add(self, val: int) -> int:
-        if len(self.nums) < self.k:
-            heapq.heappush(self.nums, val)
-        if self.nums[0] >= val:
+        if self.nums[0] > val:
             return self.nums[0]
         else:
             heapq.heappush(self.nums, val)
