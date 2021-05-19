@@ -11,14 +11,26 @@ class ListNode:
         self.next = next
 
 
-def LinkedList(list):
+def LinkedList(List):
     """
-    :param list: 输入列表
+    :param List: 输入列表
     :return: 输出单链表的头部
     """
     prev = ListNode()
     node = prev
-    for i in list:
+    for i in List:
         node.next = ListNode(i)
         node = node.next
     return prev.next
+
+
+def readLinkedList(head):
+    """
+    :param head: 头指针
+    :return: 链表值的数组
+    """
+    result = []
+    while head is not None:
+        result.append(head.val)
+        head = head.next
+    return result
