@@ -26,3 +26,19 @@ d1.update('123')
 print(d1)
 """
 # print增加了'123'，的字典
+
+
+# 有序字典，defaultdict
+"""
+from collections import defaultdict
+s=[('yellow',1),('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d=defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+a=sorted(d.items())
+print(a)
+"""
+# 运行结果：
+# [('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
+# 可填list，set，dict等，结果会存为该格式
+# 空结果返回是None
