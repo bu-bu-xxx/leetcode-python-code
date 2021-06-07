@@ -3,7 +3,7 @@
 # @web : https://leetcode-cn.com/problems/
 
 
-# 暴力算法
+# 第一次刷leetcode，暴力算法
 def twoSum(nums,target):
     n = len(nums) # nums长度
     for i in range(n):

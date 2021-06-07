@@ -5,7 +5,7 @@
 
 # 暴力法
 # 全部数取出来，然后排序，再合成链表
-# 时间复杂度O(n*log(n))，空间复杂度O(n)
+# 时间复杂度是O(n*log(n))，空间复杂度是O(n)
 from 链表.ListNode.ListNode import ListNode
 
 

@@ -4,7 +4,7 @@
 
 
 # 栈stack，右进右出
-# list append最后位置添加元素。pop删除一个位置的元素，默认最后一个
+# list append最后位置添加元素。pop删除一个位置的元素，默认是最后一个
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = ['?']
