@@ -17,18 +17,34 @@ def ListToTree(List):
     :param List: 输入列表
     :return: 输出树的根部
     """
-    root = TreeNode(val=List[0])
-    temp = [root]
-    for i in range(1, len(List)):
-        if not List[i]:
+    # 构造一个队列
+    # 队列存节点，同时指针遍历List
+    # 同广度遍历一样
+    import collections
+    queue = collections.deque()
+    root = TreeNode(List[0])
+    queue.append(root)
+    index = 0
+    while index < len(List) - 1:
+        temp = queue.popleft()
+        # 如果是空节点
+        if temp is None:
             continue
-        root_index = (i - 1) // 2
-        new_node = TreeNode(val=List[i])
-        if i % 2 == 1:
-            temp[root_index].left = new_node
+        # 左节点
+        index += 1
+        if List[index] is not None:
+            temp.left = TreeNode(List[index])
+            queue.append(temp.left)
         else:
-            temp[root_index].right = new_node
-        temp.append(new_node)
+            queue.append(temp.left)
+        # 右节点
+        index += 1
+        if index < len(List) and List[index] is not None:
+            temp.right = TreeNode(List[index])
+            queue.append(temp.right)
+        else:
+            queue.append(temp.right)
+
     return root
 
 
@@ -46,7 +62,7 @@ def TreeToList(root):
         a = temp.popleft()
         if not a:
             continue
-        al, ar = a.left,a.right
+        al, ar = a.left, a.right
         if al:
             result.append(al.val)
         else:
@@ -67,6 +83,6 @@ def TreeToList(root):
 
 
 if __name__ == '__main__':
-    list1 = [1, 2, None, 4]
+    list1 = [3, 9, 20, None, None, 15, 7]
     root1 = ListToTree(list1)
     print(TreeToList(root1))
