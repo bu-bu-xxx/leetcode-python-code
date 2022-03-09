@@ -24,4 +24,9 @@ print(chr(int("28AA",16)))
 """
 
 
+# 查看文件编码格式
+# web: https://www.cnblogs.com/skaarl/p/10159243.html
+
+
+
 
