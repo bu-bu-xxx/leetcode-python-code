@@ -14,3 +14,8 @@ class Solution:
             dp.append(sum([dp[j] * dp[i - 1 - j] for j in range(i)]))
 
         return dp[n]
+
+
+if __name__ == "__main__":
+    try1 = Solution()
+    print(try1.numTrees(15))
