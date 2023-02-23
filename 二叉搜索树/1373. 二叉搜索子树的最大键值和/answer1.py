@@ -23,6 +23,7 @@ class Solution:
             nonlocal res
             if not node:
                 return 0, 0, 0
+
             left_val, left_min, left_max = dfs(node.left)
             right_val, right_min, right_max = dfs(node.right)
 
