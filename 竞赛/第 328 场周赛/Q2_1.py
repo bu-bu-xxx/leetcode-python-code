@@ -3,7 +3,7 @@
 # edition :Python3.8
 
 
-# 2536. 子矩阵元素加 第 337 场周赛
+# 2536. 子矩阵元素加 1
 # 普通方法，复杂度太高
 from typing import List
 

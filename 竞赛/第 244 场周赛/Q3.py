@@ -11,7 +11,7 @@ from typing import List
 class Solution:
     def minFlips(self, s: str) -> int:
         def one(s1):
-            count1 = [0, 0, 0, 0]  # 奇0,第 337 场周赛，偶0,第 337 场周赛
+            count1 = [0, 0, 0, 0]  # 奇0,1，偶0,1
             for i, t in enumerate(s1):
                 if i % 2 == 0:
                     if t == '0':

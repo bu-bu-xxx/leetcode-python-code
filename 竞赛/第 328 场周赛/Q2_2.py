@@ -3,7 +3,7 @@
 # edition :Python3.8
 
 
-# 2536. 子矩阵元素加 第 337 场周赛
+# 2536. 子矩阵元素加1
 # 二维差分，即两次一维差分，降低复杂度
 from typing import List
 
